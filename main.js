@@ -36,11 +36,10 @@ app.get("/productos", async (req, res) => {
   const productos = await DB.getAllProducts();
   //res.render("main", { layout: "productos", productos });
   
-   res.render("productos", {productos});
+   res.render("productos", ...productos);
+ 
 });
 
-
- 
 
 app.post("/api/productos", async (req, res) => {
   console.log(req.body);
